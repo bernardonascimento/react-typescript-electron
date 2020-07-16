@@ -1,5 +1,6 @@
 {
   "name": "react-typescript-electron",
+  "productName": "tron-forge",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,11 +16,19 @@
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
   },
+  "devDependencies": {
+    "electron": "^9.1.0",
+    "electron-packager": "^15.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar --platform=linux --arch=all --prune=true --out=release-builds",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\""
   },
   "eslintConfig": {
     "extends": "react-app"
